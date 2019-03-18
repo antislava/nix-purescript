@@ -1,0 +1,14 @@
+{
+  "linux_tar_gz": {
+    "sha256": "083lc4i5fqph01bvirbm7y2vza2r9y644h5bfpdkb122skzf904a",
+    "url": "https://github.com/spacchetti/spago/releases/download/0.7.0.0/linux.tar.gz"
+  },
+  "osx_tar_gz": {
+    "sha256": "10kb92ylk92hfgjzjvj5rvynmfdd2bmrs6bax4a7q2k513zfb2sp",
+    "url": "https://github.com/spacchetti/spago/releases/download/0.7.0.0/osx.tar.gz"
+  },
+  "windows_tar_gz": {
+    "sha256": "064gsfinh5w2ipvcsj0gx35ifp6n9mrqn9l0p0pyvgkvvg5zm68a",
+    "url": "https://github.com/spacchetti/spago/releases/download/0.7.0.0/windows.tar.gz"
+  }
+}

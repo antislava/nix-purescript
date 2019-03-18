@@ -1,0 +1,14 @@
+{
+  "linux64_tar_gz": {
+    "sha256": "1fad862a2sv4njxbbcfzibbi585m6is3ywb94nmjl8ax254baj3i",
+    "url": "https://github.com/purescript/purescript/releases/download/v0.12.3/linux64.tar.gz"
+  },
+  "macos_tar_gz": {
+    "sha256": "1f916gv4fz571l4jvr15xjnsvjyy4nljv2ii9njwlm7k6yr5m0qn",
+    "url": "https://github.com/purescript/purescript/releases/download/v0.12.3/macos.tar.gz"
+  },
+  "win64_tar_gz": {
+    "sha256": "0wd6lnnba40mh4crb19nm8xl2p0gy2pgyhwg9p2rcs8kc1py9d45",
+    "url": "https://github.com/purescript/purescript/releases/download/v0.12.3/win64.tar.gz"
+  }
+}
