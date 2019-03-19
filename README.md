@@ -50,9 +50,12 @@ Bash-completions generated manually. They could benefit from using `optparse-app
 
 ## TO DO
 
-### Full response from github API contain volatile fields
+### Full response from github API contain volatile fields (solved?)
 
 For example, `download_count` is (obviously!) updated all the time. Whatever is stored in git needs to be cleaned of such fields, e.g. with `jq`.
+
+### Makefile repetitive, fetch shell scripts follow the same pattern
+Switch to a more wildcard-based solution (when things stabilise)
 
 ### Bash completion doesn't work (in nix shell at least).
 

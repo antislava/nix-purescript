@@ -18,29 +18,28 @@ shell-dev :
 	# nix-shell -p jq shab
 	nix-shell ./make-shell.nix
 
-$(PS_LATEST).json : $(PS_LATEST).sh
+.PHONY : shell-test
+shell-test :
+	nix-shell ./test-shell.nix
+
+%.original.json : %.sh
 	sh $< > $@
 
-$(PS_LATEST).prefetched.json : $(PS_LATEST).json $(PURS)/release.nix
+%.clean.json : %.original.json
+	jq -r -f ./common/clean.jq $< > $@
+
+$(PS_LATEST).prefetched.json : $(PS_LATEST).clean.json $(PURS)/release.nix
 	nix eval "(import $(PURS)/release.nix).assets" --json | shab | jq -r > $@
 
-$(ZP_LATEST).json : $(ZP_LATEST).sh
-	sh $< > $@
-
-$(ZP_LATEST).prefetched.json : $(ZP_LATEST).json $(ZEPHYR)/release.nix
+$(ZP_LATEST).prefetched.json : $(ZP_LATEST).clean.json $(ZEPHYR)/release.nix
 	nix eval "(import $(ZEPHYR)/release.nix).assets" --json | shab | jq -r > $@
 
-$(SP_LATEST).json : $(SP_LATEST).sh
-	sh $< > $@
-
-$(SP_LATEST).prefetched.json : $(SP_LATEST).json $(SPAGO)/release.nix
+$(SP_LATEST).prefetched.json : $(SP_LATEST).clean.json $(SPAGO)/release.nix
 	nix eval "(import $(SPAGO)/release.nix).assets" --json | shab | jq -r > $@
 
-$(PP_LATEST).json : $(PP_LATEST).sh
-	sh $< > $@
-
-$(PP_LATEST).prefetched.json : $(PP_LATEST).json $(PSCPKG)/release.nix
+$(PP_LATEST).prefetched.json : $(PP_LATEST).clean.json $(PSCPKG)/release.nix
 	nix eval "(import $(PSCPKG)/release.nix).assets" --json | shab | jq -r > $@
+
 
 .PHONY : $(PU_GITHUB).json
 $(PU_GITHUB).json :
