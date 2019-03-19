@@ -13,6 +13,11 @@ PP_LATEST = $(PSCPKG)/github.release.latest
 PN_GITHUB = $(PSC2NIX)/github
 PU_GITHUB = $(PURP)/github
 
+.PHONY : shell-dev
+shell-dev :
+	# nix-shell -p jq shab
+	nix-shell ./make-shell.nix
+
 $(PS_LATEST).json : $(PS_LATEST).sh
 	sh $< > $@
 
@@ -37,9 +42,11 @@ $(PP_LATEST).json : $(PP_LATEST).sh
 $(PP_LATEST).prefetched.json : $(PP_LATEST).json $(PSCPKG)/release.nix
 	nix eval "(import $(PSCPKG)/release.nix).assets" --json | shab | jq -r > $@
 
+.PHONY : $(PU_GITHUB).json
 $(PU_GITHUB).json :
 	env owner=justinwoo repo=purp ./common/github-prefetch.sh $< > $@
 
+.PHONY : $(PN_GITHUB).json
 $(PN_GITHUB).json :
 	env owner=justinwoo repo=psc-package2nix ./common/github-prefetch.sh $< > $@
 	# sh $< > $@

@@ -1,13 +1,13 @@
 {
-  "url": "https://api.github.com/repos/spacchetti/spago/releases/15877731",
-  "assets_url": "https://api.github.com/repos/spacchetti/spago/releases/15877731/assets",
-  "upload_url": "https://uploads.github.com/repos/spacchetti/spago/releases/15877731/assets{?name,label}",
-  "html_url": "https://github.com/spacchetti/spago/releases/tag/0.7.0.0",
-  "id": 15877731,
-  "node_id": "MDc6UmVsZWFzZTE1ODc3NzMx",
-  "tag_name": "0.7.0.0",
-  "target_commitish": "1a52fe2fd9e238361a32528d5aa6d4e3f5c5b5bf",
-  "name": "0.7.0.0",
+  "url": "https://api.github.com/repos/spacchetti/spago/releases/16212341",
+  "assets_url": "https://api.github.com/repos/spacchetti/spago/releases/16212341/assets",
+  "upload_url": "https://uploads.github.com/repos/spacchetti/spago/releases/16212341/assets{?name,label}",
+  "html_url": "https://github.com/spacchetti/spago/releases/tag/0.7.1.0",
+  "id": 16212341,
+  "node_id": "MDc6UmVsZWFzZTE2MjEyMzQx",
+  "tag_name": "0.7.1.0",
+  "target_commitish": "81110a64613d16b06dd95a860af1333ba25d1439",
+  "name": "0.7.1.0",
   "draft": false,
   "author": {
     "login": "f-f",
@@ -30,13 +30,13 @@
     "site_admin": false
   },
   "prerelease": false,
-  "created_at": "2019-03-02T18:59:04Z",
-  "published_at": "2019-03-02T22:13:37Z",
+  "created_at": "2019-03-19T16:36:20Z",
+  "published_at": "2019-03-19T17:35:05Z",
   "assets": [
     {
-      "url": "https://api.github.com/repos/spacchetti/spago/releases/assets/11325059",
-      "id": 11325059,
-      "node_id": "MDEyOlJlbGVhc2VBc3NldDExMzI1MDU5",
+      "url": "https://api.github.com/repos/spacchetti/spago/releases/assets/11618758",
+      "id": 11618758,
+      "node_id": "MDEyOlJlbGVhc2VBc3NldDExNjE4NzU4",
       "name": "linux.tar.gz",
       "label": "",
       "uploader": {
@@ -61,16 +61,15 @@
       },
       "content_type": "application/gzip",
       "state": "uploaded",
-      "size": 6714442,
-      "download_count": 192,
-      "created_at": "2019-03-02T22:42:35Z",
-      "updated_at": "2019-03-02T22:42:36Z",
-      "browser_download_url": "https://github.com/spacchetti/spago/releases/download/0.7.0.0/linux.tar.gz"
+      "size": 6969276,
+      "created_at": "2019-03-19T18:08:41Z",
+      "updated_at": "2019-03-19T18:08:41Z",
+      "browser_download_url": "https://github.com/spacchetti/spago/releases/download/0.7.1.0/linux.tar.gz"
     },
     {
-      "url": "https://api.github.com/repos/spacchetti/spago/releases/assets/11324896",
-      "id": 11324896,
-      "node_id": "MDEyOlJlbGVhc2VBc3NldDExMzI0ODk2",
+      "url": "https://api.github.com/repos/spacchetti/spago/releases/assets/11618190",
+      "id": 11618190,
+      "node_id": "MDEyOlJlbGVhc2VBc3NldDExNjE4MTkw",
       "name": "osx.tar.gz",
       "label": "",
       "uploader": {
@@ -95,16 +94,15 @@
       },
       "content_type": "application/gzip",
       "state": "uploaded",
-      "size": 3330136,
-      "download_count": 71,
-      "created_at": "2019-03-02T22:21:20Z",
-      "updated_at": "2019-03-02T22:21:20Z",
-      "browser_download_url": "https://github.com/spacchetti/spago/releases/download/0.7.0.0/osx.tar.gz"
+      "size": 3452505,
+      "created_at": "2019-03-19T17:49:43Z",
+      "updated_at": "2019-03-19T17:49:43Z",
+      "browser_download_url": "https://github.com/spacchetti/spago/releases/download/0.7.1.0/osx.tar.gz"
     },
     {
-      "url": "https://api.github.com/repos/spacchetti/spago/releases/assets/11324916",
-      "id": 11324916,
-      "node_id": "MDEyOlJlbGVhc2VBc3NldDExMzI0OTE2",
+      "url": "https://api.github.com/repos/spacchetti/spago/releases/assets/11618082",
+      "id": 11618082,
+      "node_id": "MDEyOlJlbGVhc2VBc3NldDExNjE4MDgy",
       "name": "windows.tar.gz",
       "label": "",
       "uploader": {
@@ -129,14 +127,13 @@
       },
       "content_type": "application/octet-stream",
       "state": "uploaded",
-      "size": 6948630,
-      "download_count": 43,
-      "created_at": "2019-03-02T22:24:04Z",
-      "updated_at": "2019-03-02T22:24:04Z",
-      "browser_download_url": "https://github.com/spacchetti/spago/releases/download/0.7.0.0/windows.tar.gz"
+      "size": 7048979,
+      "created_at": "2019-03-19T17:44:40Z",
+      "updated_at": "2019-03-19T17:44:41Z",
+      "browser_download_url": "https://github.com/spacchetti/spago/releases/download/0.7.1.0/windows.tar.gz"
     }
   ],
-  "tarball_url": "https://api.github.com/repos/spacchetti/spago/tarball/0.7.0.0",
-  "zipball_url": "https://api.github.com/repos/spacchetti/spago/zipball/0.7.0.0",
-  "body": "Breaking changes:\r\n- The NPM package `purescript-spago` is now deprecated. New releases will be published only to the package `spago` (#115, #44)  \r\n  You can install the package with `npm install -g spago`\r\n- [Spacchetti has been merged in the official package-set](https://github.com/purescript/package-sets/pull/271): this means that `spago` will now use that as the reference package-set. (#120)  \r\n  As a result of this, the command `spago spacchetti-upgrade` has been renamed to `spago package-set-upgrade`.\r\n\r\nNew features:\r\n- Support Windows in NPM install (#121, #109)  \r\n- Add `spago freeze` command to recompute hashes of the package-set (#113)\r\n- Add `spago verify` and `spago verify-set` commands (#108, #14) \r\n- Add the `--filter` flag to `spago list-packages`, to filter by direct and transitive deps (#106, #108, thanks @kedashoe!)\r\n- Check that the version of the installed compiler is at least what the package-set requires (#101, #107, #117, #116) \r\n\r\nOther improvements:\r\n- Improve the installation: do less work and print less useless stuff (#110, #112, #114) \r\n- Skip the copy of template files if the source directories exist (#102, #105)"
+  "tarball_url": "https://api.github.com/repos/spacchetti/spago/tarball/0.7.1.0",
+  "zipball_url": "https://api.github.com/repos/spacchetti/spago/zipball/0.7.1.0",
+  "body": "New features:\r\n- Add `--watch` flag to `build`, `test`, `run`, `bundle` and `make-module` commands (#65, #126, #153) \r\n- Add `spago docs` command, to generate documentation from the project and all dependencies (#127)\r\n- Add `spago run` command, to run your project (#131, #137, thanks @JordanMartinez!)\r\n\r\nOther fixes and improvements:\r\n- Automatically build in commands that require the project to be built (#146, #149, thanks @FintanH!)\r\n- Don't automatically create a configuration if not found (#139, #144) \r\n- Always ensure that the package-set has a hash on it, for speed and security reasons (#128) \r\n- Improvements to documentation and FAQ (#132, #125, #119, #123, #104, #135)\r\n- Improvements to errors, messages and logging (#143, #145, #133, #151, #148, #129, #130, #136 thanks @iAmMrinal0!)\r\n- Improvements to tests (#95, #91, #138, #141, #140 thanks @JordanMartinez!)\r\n- Format Dhall files with ASCII instead of Unicode (#124)\r\n"
 }

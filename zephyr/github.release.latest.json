@@ -62,7 +62,6 @@
       "content_type": "application/octet-stream",
       "state": "uploaded",
       "size": 57,
-      "download_count": 0,
       "created_at": "2018-09-16T23:33:03Z",
       "updated_at": "2018-09-16T23:33:04Z",
       "browser_download_url": "https://github.com/coot/zephyr/releases/download/v0.2.1/linux64.sha"
@@ -96,7 +95,6 @@
       "content_type": "application/gzip",
       "state": "uploaded",
       "size": 5321705,
-      "download_count": 191,
       "created_at": "2018-09-16T23:33:02Z",
       "updated_at": "2018-09-16T23:33:03Z",
       "browser_download_url": "https://github.com/coot/zephyr/releases/download/v0.2.1/linux64.tar.gz"
@@ -130,7 +128,6 @@
       "content_type": "application/octet-stream",
       "state": "uploaded",
       "size": 55,
-      "download_count": 0,
       "created_at": "2018-09-16T22:24:54Z",
       "updated_at": "2018-09-16T22:24:54Z",
       "browser_download_url": "https://github.com/coot/zephyr/releases/download/v0.2.1/macos.sha"
@@ -164,7 +161,6 @@
       "content_type": "application/gzip",
       "state": "uploaded",
       "size": 1937916,
-      "download_count": 4,
       "created_at": "2018-09-16T22:24:53Z",
       "updated_at": "2018-09-16T22:24:53Z",
       "browser_download_url": "https://github.com/coot/zephyr/releases/download/v0.2.1/macos.tar.gz"
@@ -198,7 +194,6 @@
       "content_type": "application/octet-stream",
       "state": "uploaded",
       "size": 61,
-      "download_count": 0,
       "created_at": "2018-09-16T23:03:21Z",
       "updated_at": "2018-09-16T23:03:21Z",
       "browser_download_url": "https://github.com/coot/zephyr/releases/download/v0.2.1/win64.sha"
@@ -232,7 +227,6 @@
       "content_type": "application/octet-stream",
       "state": "uploaded",
       "size": 5559693,
-      "download_count": 1,
       "created_at": "2018-09-16T23:03:22Z",
       "updated_at": "2018-09-16T23:03:22Z",
       "browser_download_url": "https://github.com/coot/zephyr/releases/download/v0.2.1/win64.tar.gz"

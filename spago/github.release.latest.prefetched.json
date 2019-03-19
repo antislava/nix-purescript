@@ -1,14 +1,14 @@
 {
   "linux_tar_gz": {
-    "sha256": "083lc4i5fqph01bvirbm7y2vza2r9y644h5bfpdkb122skzf904a",
-    "url": "https://github.com/spacchetti/spago/releases/download/0.7.0.0/linux.tar.gz"
+    "sha256": "0wljf5mxxd7870k8mfylvzg535f7nfvj897591n2fdqv1rg3jg7z",
+    "url": "https://github.com/spacchetti/spago/releases/download/0.7.1.0/linux.tar.gz"
   },
   "osx_tar_gz": {
-    "sha256": "10kb92ylk92hfgjzjvj5rvynmfdd2bmrs6bax4a7q2k513zfb2sp",
-    "url": "https://github.com/spacchetti/spago/releases/download/0.7.0.0/osx.tar.gz"
+    "sha256": "0igxykrr98pi6wj6v1sisa7f2692s69m4ij0qwvj9ry1zlhisywb",
+    "url": "https://github.com/spacchetti/spago/releases/download/0.7.1.0/osx.tar.gz"
   },
   "windows_tar_gz": {
-    "sha256": "064gsfinh5w2ipvcsj0gx35ifp6n9mrqn9l0p0pyvgkvvg5zm68a",
-    "url": "https://github.com/spacchetti/spago/releases/download/0.7.0.0/windows.tar.gz"
+    "sha256": "12lvh909r640lhdl14s6r0if44isnzxhkp35qrd7vrfxlqrmk87b",
+    "url": "https://github.com/spacchetti/spago/releases/download/0.7.1.0/windows.tar.gz"
   }
 }
