@@ -1,6 +1,6 @@
 self: pkgs:
 let
-  release = import ./release.nix;
+  release = import ../common/release.nix ./github.release.latest.clean.json;
   prefetched = builtins.fromJSON (builtins.readFile ./github.release.latest.prefetched.json);
   patchelf = import ../common/patchelf.nix pkgs;
 in {
