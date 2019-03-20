@@ -25,8 +25,7 @@ in {
       EXE=$out/bin/purs
       install -D -m555 -T purs $EXE
       ${patchelf libPath}
-      $EXE --bash-completion-script $EXE > $out/etc/bash_completion.d/bash-completion
-      # install -D -m 444 <($EXE --bash-completion-script $EXE) $out/share/bash-completion/completions/purs
+      $EXE --bash-completion-script $EXE > $out/etc/bash_completion.d/purs-completion.bash
     '';
     # TODO: Bash completion not working (need to run the script in shell)
     # Bash completion is usually installed in postInstall but...

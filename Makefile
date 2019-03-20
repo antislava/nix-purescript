@@ -8,6 +8,9 @@ PSC2NIX = $(DIR)/pscpkg2nix
 
 LATEST = github.release.latest
 
+EXAMPLE = $(DIR)/example
+DHALL = $(EXAMPLE)/dhall
+
 # NIX SHELLS
 
 .PHONY : shell-dev
@@ -55,6 +58,11 @@ $(PU_GITHUB).json :
 $(PN_GITHUB).json :
 	env owner=justinwoo repo=psc-package2nix ./common/github-prefetch.sh $< > $@
 	# sh $< > $@
+
+.PHONY : $(DHALL)/github.json
+$(DHALL).github.json :
+	env owner=antislava repo=nix-dhall ./common/github-prefetch.sh $< > $@
+
 
 
 # OLD (but kept for the time being...)
