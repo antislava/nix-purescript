@@ -1,5 +1,6 @@
+latest:
 let
-  data = builtins.fromJSON (builtins.readFile ./github.release.latest.clean.json);
+  data = builtins.fromJSON (builtins.readFile latest);
   assetList = builtins.filter (p: builtins.match "^.*\.sha$" p.name == null) data.assets;
   prepareName = builtins.replaceStrings ["." " "] ["_" "_"];
   # toRec = i: { name = prepareName i.name; value = i; };

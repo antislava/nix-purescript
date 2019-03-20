@@ -6,12 +6,9 @@ PSCPKG  = $(DIR)/pscpkg
 PURP    = $(DIR)/purp
 PSC2NIX = $(DIR)/pscpkg2nix
 
-PS_LATEST = $(PURS)/github.release.latest
-ZP_LATEST = $(ZEPHYR)/github.release.latest
-SP_LATEST = $(SPAGO)/github.release.latest
-PP_LATEST = $(PSCPKG)/github.release.latest
-PN_GITHUB = $(PSC2NIX)/github
-PU_GITHUB = $(PURP)/github
+LATEST = github.release.latest
+
+# NIX SHELLS
 
 .PHONY : shell-dev
 shell-dev :
@@ -22,24 +19,33 @@ shell-dev :
 shell-test :
 	nix-shell ./test-shell.nix
 
+
+# PACKAGES WITH RELEASES
+
 %.original.json : %.sh
 	sh $< > $@
 
 %.clean.json : %.original.json
 	jq -r -f ./common/clean.jq $< > $@
 
-$(PS_LATEST).prefetched.json : $(PS_LATEST).clean.json $(PURS)/release.nix
-	nix eval "(import $(PURS)/release.nix).assets" --json | shab | jq -r > $@
+# Adding dummy specifications so that shell completion works ;)
+$(PURS)/$(LATEST).prefetched.json :
 
-$(ZP_LATEST).prefetched.json : $(ZP_LATEST).clean.json $(ZEPHYR)/release.nix
-	nix eval "(import $(ZEPHYR)/release.nix).assets" --json | shab | jq -r > $@
+$(SPAGO)/$(LATEST).prefetched.json :
 
-$(SP_LATEST).prefetched.json : $(SP_LATEST).clean.json $(SPAGO)/release.nix
-	nix eval "(import $(SPAGO)/release.nix).assets" --json | shab | jq -r > $@
+$(PSCPKG)/$(LATEST).prefetched.json :
 
-$(PP_LATEST).prefetched.json : $(PP_LATEST).clean.json $(PSCPKG)/release.nix
-	nix eval "(import $(PSCPKG)/release.nix).assets" --json | shab | jq -r > $@
+$(ZEPHYR)/$(LATEST).prefetched.json :
 
+# Generic rule
+# %/$(LATEST).prefetched.json : %/$(LATEST).clean.json %/release.nix
+# 	nix eval "(import $*/release.nix).assets" --json | shab | jq -r > $@
+
+%/$(LATEST).prefetched.json : %/$(LATEST).clean.json
+	nix eval "(import ./common/release.nix $<).assets" --json | shab | jq -r > $@
+
+
+# PLAIN PACKAGES
 
 .PHONY : $(PU_GITHUB).json
 $(PU_GITHUB).json :
@@ -49,6 +55,7 @@ $(PU_GITHUB).json :
 $(PN_GITHUB).json :
 	env owner=justinwoo repo=psc-package2nix ./common/github-prefetch.sh $< > $@
 	# sh $< > $@
+
 
 # OLD (but kept for the time being...)
 # Switched from jq (below) to nix eval for better consistency
