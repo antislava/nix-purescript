@@ -1,19 +1,22 @@
 # with import <nixpkgs> { overlays = (import ./.).overlays.all ;};
-with import <nixpkgs> { overlays = [
+with import ./nixpkgs {} {
+  config.allowBroken = true;
+  overlays = [
   (import ./..).overlays.combined
   # (self: pkgs: import ./dhall {inherit pkgs;}) this causes infinite rec-n
   (import ./dhall {})
 ] ;};
 let withBashCompletion = [
-  purs-bin
-  zephyr-bin
-  spago-bin
-  pscpkg-bin
-
+  # Dhall & Co
   dhall-bin
   dhall-json-bin
   dhall-text-bin
   dhall-bash-bin
+  # PS & Co
+  purs-bin
+  zephyr-bin
+  spago-bin
+  pscpkg-bin
 ];
 in
 runCommand "ps-example-shell" {
@@ -21,7 +24,14 @@ runCommand "ps-example-shell" {
     pscpkg2nix
     purp
 
+    yarn
+    # https://github.com/dsifford/yarn-completion # Need this?
+    yarn2nix
+    npm2nix
+
     nodejs-10_x
+    nodePackages_10_x.parcel-bundler
+    nodePackages_10_x.pulp
     # nodePackages_10_x.webpack
     # nodePackages_10_x.webpack-cli
   ];
@@ -31,7 +41,7 @@ runCommand "ps-example-shell" {
   shellHook = ''
     echo "Simple PS dev starter shell"
     echo See https://github.com/justinwoo/spacchetti-react-basic-starter
-    echo "Loading bash completions:"
+    echo "Loading bash completions for:"
     '' + (
       builtins.concatStringsSep "\n" (
         map (p:

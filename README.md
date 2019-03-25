@@ -38,6 +38,23 @@ purp
 psc-package2nix # will report error
 ```
 
+## Related (infrastructure, installation, `nix`- and `dhall-ification`,...)
+
+### Components
+* [purescript/package-sets: PureScript packages for Psc-Package and Spago](https://github.com/purescript/package-sets)
+* [purescript-contrib/pulp: A build tool for PureScript projects](https://github.com/purescript-contrib/pulp)
+
+### Guides, scripts, templates,...
+* [justinwoo/purescript-resources: This is a repository for a docs site on how to figure things out in PureScript as recommended by me.](https://github.com/justinwoo/purescript-resources)
+* [Installation — PureScript-Resources documentation](https://purescript-resources.readthedocs.io/en/latest/installation.html)
+* [nixpkgs/default.nix at a6fa300cf7192b61234436dd199f3678b648a096 · NixOS/nixpkgs](https://github.com/NixOS/nixpkgs/blob/a6fa300cf7192b61234436dd199f3678b648a096/pkgs/development/compilers/purescript/psc-package/default.nix)
+* [srdqty/purescript-project-template](https://github.com/srdqty/purescript-project-template)
+* [tmountain/purescript-reproducible: A short guide detailing how to bootstrap PureScript.](https://github.com/tmountain/purescript-reproducible)
+
+### MISC
+* [JordanMartinez/purescript-jordans-reference: Repo for documenting my learnings of Purescript](https://github.com/JordanMartinez/purescript-jordans-reference)
+* [Learning From the Feynman Technique – Taking Note – Medium](https://medium.com/taking-note/learning-from-the-feynman-technique-5373014ad230)
+
 ## Notes
 
 `purp` and `psc-packages2nix` are very minimalistic cabal-less (i.e. `ghc` only) haskell scripts with no dependencies except `base`.

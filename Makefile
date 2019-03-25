@@ -6,10 +6,16 @@ PSCPKG  = $(DIR)/pscpkg
 PURP    = $(DIR)/purp
 PSC2NIX = $(DIR)/pscpkg2nix
 
-LATEST = github.release.latest
+$(info $(shell mkdir -p \
+$(PURS) \
+$(ZEPHYR) \
+$(SPAGO) \
+$(PSCPKG) \
+$(PURP) \
+$(PSC2NIX) \
+))
 
-EXAMPLE = $(DIR)/example
-DHALL = $(EXAMPLE)/dhall
+LATEST = github.release.latest
 
 # NIX SHELLS
 
@@ -23,7 +29,9 @@ shell-test :
 	nix-shell ./test-shell.nix
 
 
-# PACKAGES WITH RELEASES
+# #####################################
+# Binary release packages
+# #####################################
 
 %.original.json : %.sh
 	sh $< > $@
@@ -48,21 +56,16 @@ $(ZEPHYR)/$(LATEST).prefetched.json :
 	nix eval "(import ./common/release.nix $<).assets" --json | shab | jq -r > $@
 
 
-# PLAIN PACKAGES
+# #####################################
+# Source packages
+# #####################################
 
-.PHONY : $(PU_GITHUB).json
-$(PU_GITHUB).json :
+$(PURP)/github.json :
 	env owner=justinwoo repo=purp ./common/github-prefetch.sh $< > $@
 
-.PHONY : $(PN_GITHUB).json
-$(PN_GITHUB).json :
+$(PSC2NIX)/github.json :
 	env owner=justinwoo repo=psc-package2nix ./common/github-prefetch.sh $< > $@
 	# sh $< > $@
-
-.PHONY : $(DHALL)/github.json
-$(DHALL).github.json :
-	env owner=antislava repo=nix-dhall ./common/github-prefetch.sh $< > $@
-
 
 
 # OLD (but kept for the time being...)

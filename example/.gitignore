@@ -1,0 +1,19 @@
+/bower_components/
+/node_modules/
+/.pulp-cache/
+/output/
+/generated-docs/
+/.psc-package/
+/.psc*
+/.purs*
+/.psa*
+/.spago
+
+tags
+
+# Project files
+src/
+test/
+packages.dhall
+spago.dhall
+index.js

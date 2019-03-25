@@ -1,0 +1,4 @@
+8c8
+<     [ "effect", "console" ]
+---
+>     [ "effect", "console", "psci-support" ]
