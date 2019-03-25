@@ -2,15 +2,25 @@
 
 Re-interpretation fork of [justinwoo/easy-purescript-nix: Easy PureScript (and other tools) with Nix](https://github.com/justinwoo/easy-purescript-nix) exporting nix overlays for PureScript related tools, for, where available, binary releases.
 
+The purpose is to facilitate the workflow and improve reproducibility of the build environment.
+
 ## Using
 
-Include generated overlays in your project `nixpkgs`. Run `nix-shell ./test-shell.nix` for an example.
+One way to use this tool is to add this repo as git sub-module into a relevant directory, e.g.
 
-## Generating and updating
+```
+git submodule add https://github.com/antislava/nix-purescript nix
+```
+
+This method allows maximum flexibility in terms of fixing dependency versions and adding other dependencies and overlays, as well as re-using provided shell.nix (as an initial template).
+
+The alternative is to import the nix overlays in own projects' nix definitions. See `nix-shell ./example/shell.nix` for an example.
+
+## Generating and updating dependencies
 
 Use Makefile to easily fetch the latest release asset data using GitHub API, and generate (or update) nix scripts for relevant dependencies.
 
-Dependencies are included in a nix-shell environment:
+The auxiliary tools used directly or indirectly by the Makefile are included in a nix-shell environment:
 
 ```sh
 nix-shell ./make-shell.nix
@@ -23,7 +33,7 @@ make */github.release.latest.prefetched.json -B
 make */github.json -B
 ```
 
-To test the updated packages, enter test environment:
+To test the updated packages, enter the test environment:
 
 ```
 nix-shell ./test-shell.nix
@@ -38,7 +48,7 @@ purp
 psc-package2nix # will report error
 ```
 
-## Related (infrastructure, installation, `nix`- and `dhall-ification`,...)
+## Related PS projects and sources (infrastructure, installation, `nix`- and `dhall-ification`,...)
 
 ### Components
 * [purescript/package-sets: PureScript packages for Psc-Package and Spago](https://github.com/purescript/package-sets)
@@ -55,7 +65,8 @@ psc-package2nix # will report error
 * [JordanMartinez/purescript-jordans-reference: Repo for documenting my learnings of Purescript](https://github.com/JordanMartinez/purescript-jordans-reference)
 * [Learning From the Feynman Technique – Taking Note – Medium](https://medium.com/taking-note/learning-from-the-feynman-technique-5373014ad230)
 
-## Notes
+
+## Notes and observations
 
 `purp` and `psc-packages2nix` are very minimalistic cabal-less (i.e. `ghc` only) haskell scripts with no dependencies except `base`.
 
@@ -63,20 +74,4 @@ Bash-completions generated manually. They could benefit from using `optparse-app
 
 * [Options.Applicative.BashCompletion](https://hackage.haskell.org/package/optparse-applicative-0.14.3.0/docs/Options-Applicative-BashCompletion.html)
 * [Bash Completion · pcapriotti/optparse-applicative Wiki](https://github.com/pcapriotti/optparse-applicative/wiki/Bash-Completion)
-
-
-## TO DO
-
-### ~~Full response from github API contain volatile fields (solved?)~~
-
-For example, `download_count` is (obviously!) updated all the time. Solved.
-
-### ~~Makefile repetitive, fetch shell scripts follow the same pattern~~
-Solved
-
-### ~~Bash completion doesn't work (in nix shell at least)~~
-
-~~Need to manually source completion file (from nix store)~~
-
-Added bash completion script sourcing in test-shell.nix
 
